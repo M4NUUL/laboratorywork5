@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
    int choice = 0;
-   cout << "Выберите номер задачи (1-5): ";
+   cout << "Выберите номер задачи (1-4): ";
    cin >> choice;
 
    switch (choice)
