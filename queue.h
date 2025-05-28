@@ -37,4 +37,3 @@ void doDistribute(int windows) {
         cout << endl;
     }
 }
-
