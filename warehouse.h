@@ -25,6 +25,11 @@ void addProduct(const string &name, int cnt, const string &address)
            << endl;
       return;
    }
+   if (cnt <= 0)
+   {
+      cout << "Количество товара должно быть положительным" << endl;
+      return;
+   }
    auto &cell = storage[address]; // создаёт запись, если нет
    int current = cell.second;
    // Запрет на смешивание товаров
@@ -49,6 +54,10 @@ void removeProduct(const string& name, int cnt, const string& address) {
     }
     if (it->second.second < cnt) {
         cout << "Недостаточно товара для удаления." << endl;
+        return;
+    }
+    if (cnt <= 0) {
+        cout << "Количество товара для удаления должно быть положительным." << endl;
         return;
     }
     it->second.second -= cnt;
