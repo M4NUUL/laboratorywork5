@@ -27,11 +27,12 @@ int main()
          {
             string name, address;
             int cnt;
-            if (!(cin >> name >> cnt >> address)) {
-                cout << "Ошибка: команда ADD требует три аргумента: название количество адрес\n";
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                continue;
+            if (!(cin >> name >> cnt >> address))
+            {
+               cout << "Ошибка: команда ADD требует три аргумента: название количество адрес\n";
+               cin.clear();
+               cin.ignore(numeric_limits<streamsize>::max(), '\n');
+               continue;
             }
             addProduct(name, cnt, address);
          }
@@ -82,6 +83,7 @@ int main()
    }
    case 3:
    {
+      LoadPlanes(); // загружаем самолёты из файла
       string line;
       while (getline(cin, line))
       {
@@ -95,7 +97,11 @@ int main()
          while (ss >> tmp)
             parts.push_back(tmp);
          if (cmd == "CREATE_PLANE")
-            createPlane(parts);
+         {
+            string plane_name = parts[0];
+            vector<string> towns(parts.begin() + 1, parts.end());
+            CreatePlane(plane_name, towns);
+         }
          else if (cmd == "PLANES_FOR_TOWN")
             planesForTown(parts[0]);
          else if (cmd == "TOWNS_FOR_PLANE")
@@ -106,9 +112,9 @@ int main()
             break;
       }
       break;
-      }
-      case 4:
-      {
+   }
+   case 4:
+   {
       int N;
       cin >> N;
       while (N--)
@@ -117,25 +123,25 @@ int main()
          cin >> cmd;
          if (cmd == "CLASS")
          {
-         int d;
-         string s;
-         cin >> d >> s;
-         doClass(d, s);
+            int d;
+            string s;
+            cin >> d >> s;
+            doClass(d, s);
          }
          else if (cmd == "NEXT")
-         doNext();
+            doNext();
          else if (cmd == "VIEW")
          {
-         int d;
-         cin >> d;
-         doView(d);
+            int d;
+            cin >> d;
+            doView(d);
          }
       }
       break;
    }
    default:
       cout << "Неверный номер задачи." << endl;
-      break; 
+      break;
    }
    return 0;
 }
