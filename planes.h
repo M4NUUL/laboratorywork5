@@ -18,7 +18,7 @@ static map<string, vector<string>> townToPlanes;
 
 
 void CreatePlane(const string &plane_name, const vector<string> &towns)
-{
+{ 
     if (planeToTowns.count(plane_name))
     {
         throw runtime_error("Самолет" + plane_name + " уже существует!");
