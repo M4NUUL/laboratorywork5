@@ -38,3 +38,4 @@
 
 # Chache files
 __pycache__
+.vscode
