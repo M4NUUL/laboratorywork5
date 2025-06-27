@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm> // Для std::find
+#include <algorithm> // Для find
 
 #include "class.h"
 

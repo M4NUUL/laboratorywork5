@@ -1,5 +1,13 @@
 #pragma once
 
+#include <map>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <set>
+
+using namespace std;
+
 enum class Cmd
 {
     CREATE_PLANE,

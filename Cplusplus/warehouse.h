@@ -1,5 +1,11 @@
 #pragma once
 
+#include <vector>
+#include <unordered_map>
+#include <string>
+
+using namespace std;
+
 bool isValidAddress(const string &address); // проверка корректности адреса
 
 
